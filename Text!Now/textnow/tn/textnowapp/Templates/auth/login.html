@@ -1,0 +1,27 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> textnow App </title>
+</head>
+<body>
+
+	<h2>Text!Now</h2>
+	<form method="post">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit">Login</button>
+	</form>
+	<p> ¿No tienes una cuenta? </p>
+	
+	<form method="get" action="/register">
+		<button type="submit">Registrarse</button>
+	</form>
+</body>
+</html>
+
+
+
+
