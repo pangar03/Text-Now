@@ -1,24 +1,58 @@
 
 
 <!DOCTYPE html>
+{% load staticfiles %}
 <html>
+<style type="text/css">
+	body {
+		background: #ddd
+	}
+
+	p{
+		font-size: 16pt;
+		text-align: center;
+		font-family: 'Comfortaa';
+	}
+	button{
+		text-align: center;
+	}
+
+	
+	.header {
+    background-color: #49a7cc;
+    margin-top: 0;
+    padding: 20px 20px 20px 80px;
+    color:#000000;
+	font-family: 'Comfortaa';
+	font-size: 52pt;
+	}
+
+</style>
 <head>
-	<meta charset="utf-8">
+
 	<title> textnow App </title>
 </head>
+
+
+	
+
 <body>
 
-	<h2>Text!Now</h2>
-	<form method="post">
-		{% csrf_token %}
-		{{ form.as_p }}
-		<button type="submit">Login</button>
-	</form>
+	<h1 class="header">Text!Now</h1>
+	<div style="text-align: center;">
+		<form method="post">
+			{% csrf_token %}
+			{{ form.as_p }}
+
+			<button type="submit">Login</button>
+		</form>
+	</div>
 	<p> ¿No tienes una cuenta? </p>
-	
-	<form method="get" action="/register">
-		<button type="submit">Registrarse</button>
-	</form>
+	<div style="text-align: center;">
+		<form method="get" action="/register">
+			<button type="submit">Registrarse</button>
+		</form>
+	</div>
 </body>
 </html>
 

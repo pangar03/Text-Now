@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Homepage</title>
+
+</head>
+
+<style type="text/css">
+	
+
+	body{
+		background: #ddd
+	}
+
+	.logout{
+		font-family: 'Comfortaa';
+		font-size: 16pt;
+		text-decoration: none;
+		color: white;
+		padding: 2px 20px;
+		background-color: black;
+	}
+	.userlist{
+		font-family: 'Comfortaa';
+		font-size: 32pt;
+		overflow-y: scroll;
+		text-decoration: none;
+		padding: 2px 20px;
+		background-color: #AAB5F1;
+
+	}
+
+
+	.header {
+    background-color: #49a7cc;
+    margin-top: 0;
+    padding: 20px 20px 20px 80px;
+    color:#000000;
+	font-family: 'Comfortaa';
+	font-size: 52pt;
+	}
+
+	h1 {
+		font-family: 'Comfortaa';
+		font-size: 36pt;
+	}
+	h2 {
+		font-family: 'Comfortaa';
+		font-size: 28pt;
+	}
+	h3 {
+		font-family: 'Comfortaa';
+		font-size: 16pt;
+	}
+	.user{
+		font-family: 'Comfortaa';
+		font-size: 39pt;
+
+	}
+
+
+</style>
+
+
+
+<body>
+	<h1 class="header">Text!Now</h1>
+	<a class="logout" href="/">Salir</a>
+	<div>
+		<h1 > Bienvenido de nuevo {{user.username}}</h1>
+		
+		
+	</div>
+	<h2>Iniciar conversacion</h2>
+	<h3> Lista de usuarios</h3>
+	<div ">
+		{%for u in usersList%}
+			{%if u != user%}
+				<a class="userlist" href="/chat/{{user.id}}/{{u.id}}">{{u.username}}</a><br><br>
+			{%endif%}
+		{%endfor%}
+	</div>
+	
+
+	
+</body>
+</html>

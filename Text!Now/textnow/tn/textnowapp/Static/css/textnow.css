@@ -1,0 +1,11 @@
+h1, h2, h3, a {
+	color:#010c30;
+	font-family: 'Comfortaa';
+	font-size: 52pt;
+}
+
+.header {
+    background-color: #27a8f7;
+    margin-top: 0;
+    padding: 40px 40px 40px 60px;
+}

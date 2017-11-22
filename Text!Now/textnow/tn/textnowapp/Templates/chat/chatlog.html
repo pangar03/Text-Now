@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>{{chat.tittle}}</title>
+	<style type="text/css">
+
+	.header {
+    	background-color: #49a7cc;
+	    margin-top: 0;
+	    padding: 20px 20px 20px 80px;
+	    color:#000000;
+		font-family: 'Comfortaa';
+	
+		font-size: 52pt;
+	}
+	body{
+		background: #ddd;
+	}
+	a{
+		font-family: 'Comfortaa';
+		font-size: 16pt;
+		text-decoration: none;
+		color: white;
+		padding: 2px 20px;
+		background-color: black;
+	}
+	.msg{
+		padding: 1px 15px;
+		margin: 15px;
+		box-shadow: 1px 1px 3px #aaa;
+	}
+		.mio{background-color: #98d4ff;
+
+		}
+		.otro{background-color: #bac3e0; 
+
+		}
+		#conversacion{
+			width: 80%;
+			height: 500px;
+			padding: 20px;
+			overflow-y: scroll;
+			margin: 20px auto;
+
+		}
+		
+	</style>
+
+</head>
+
+	
+<body>
+	<h1 class="header">Text!Now</h1>
+	<form method="get" action="/home">
+		<a href="/home"> Home </a>
+	</form>
+	<div id="conversacion" class="mensaje">
+		{%for m in mensajes%}			
+				<div class=" msg
+				{%if user == m.sender%}
+					mio">
+					<p><b>Tú:</b> <br>
+				{%else%}
+				otro">
+					<p><b>{{m.sender.username}}:</b> <br>
+				{%endif%}
+						{%if m.message != None %}
+					 {{m.message}}
+					 {%endif%}
+					</p>
+				<p>
+					{{m.time}}
+				</p>
+				</div>
+			
+		{%endfor%}
+
+	</div>
+
+	<form method="GET">
+		<input type="hidden" name="conversacionid" value="{{chat.id}}" method="GET">
+		Mensaje: <input type="text" name="Mensaje"><button type="submit">Enviar</button>
+
+	</form>
+	
+
+
+</body>
+</html>
